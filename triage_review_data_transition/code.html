@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#333348",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#ffe07d",
+                    "on-secondary-container": "#594700",
+                    "on-tertiary-fixed-variant": "#6b3743",
+                    "secondary": "#fbd12d",
+                    "surface-container-highest": "#333348",
+                    "secondary-fixed-dim": "#ebc31a",
+                    "surface-container-high": "#28283d",
+                    "outline-variant": "#464555",
+                    "on-primary-container": "#fefaff",
+                    "primary": "#c3c0ff",
+                    "on-tertiary-container": "#fffaff",
+                    "inverse-on-surface": "#2f2e43",
+                    "on-background": "#e2e0fc",
+                    "on-surface-variant": "#c7c4d8",
+                    "inverse-primary": "#4c42e9",
+                    "surface-bright": "#37374d",
+                    "on-tertiary-fixed": "#360c19",
+                    "on-surface": "#e2e0fc",
+                    "on-error": "#690005",
+                    "tertiary-container": "#9f6370",
+                    "surface-container": "#1e1e32",
+                    "surface-tint": "#c3c0ff",
+                    "tertiary-fixed-dim": "#fbb3c1",
+                    "surface-container-lowest": "#0c0c1f",
+                    "inverse-surface": "#e2e0fc",
+                    "background": "#111125",
+                    "surface-dim": "#111125",
+                    "surface-container-low": "#1a1a2e",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-primary": "#1d00a5",
+                    "on-tertiary": "#50212d",
+                    "on-secondary": "#3b2f00",
+                    "outline": "#918fa1",
+                    "primary-container": "#635bff",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#dcb500",
+                    "on-primary-fixed-variant": "#321ed2",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#564500",
+                    "tertiary": "#fbb3c1",
+                    "on-primary-fixed": "#0f0069",
+                    "surface": "#111125",
+                    "on-secondary-fixed": "#231b00",
+                    "primary-fixed": "#e2dfff",
+                    "tertiary-fixed": "#ffd9df"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-padding": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-page": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-bold": ["Hanken Grotesk"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "data-mono": ["Space Grotesk"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-brutalist-shadow { box-shadow: 4px 4px 0px #000; }
+        .neo-brutalist-shadow-lg { box-shadow: 8px 8px 0px #000; }
+        .neo-brutalist-shadow-sm { box-shadow: 2px 2px 0px #000; }
+        .active-press { transform: translate(2px, 2px); box-shadow: 0px 0px 0px #000; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-20 px-gutter w-full sticky top-0 z-50 bg-surface border-b-4 border-black dark:border-surface-container-highest shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-extrabold text-secondary italic">ProctorEdge</span>
+<nav class="hidden md:flex gap-6 ml-8">
+<a class="text-secondary font-bold hover:bg-secondary hover:text-on-secondary transition-all duration-100 px-3 py-1" href="#">Triage Review</a>
+<a class="text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all duration-100 px-3 py-1" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-2 border-black px-4 py-2 w-64 neo-brutalist-shadow-sm focus:outline-none focus:ring-0 focus:border-secondary" placeholder="Search incidents..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant">search</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors">settings</button>
+<div class="h-10 w-10 border-2 border-black rounded-lg overflow-hidden neo-brutalist-shadow-sm">
+<img alt="Administrator Avatar" class="w-full h-full object-cover" data-alt="A close-up professional portrait of a tech administrator in a high-contrast Neo-Brutalist digital art style. The character is rendered with bold, thick outlines and a minimalist color palette of deep indigo and vibrant yellow. The lighting is sharp and dramatic, emphasizing a high-performance SaaS atmosphere. The background is a clean, dark purple textured surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAaLCIy0nVd04nGDbMxNQdm3KvPJd2lY9e89agkMMFs-htbtxLm0z7RgCx6kiP7p_yjdtDT2r6bJG28yaoMCO9gaGHRL1_pkqo52QjyNC24ksrC1cCu2GIwrSGQfJ91ahA5hZYVlZqNAuSpuCAX8cvSatHgLQoxGJIJjd8jrRMPHgqZOZD2X07KRapOgdNjIzuLoU8EZiVH-hidRz1QZIuiknQ25w61JbKrbbRs_-QRE5EIRuFM-HYTY7AOI4lzyvbhz6S5YgXLQ2U"/>
+</div>
+<button class="bg-secondary text-on-secondary px-4 py-2 border-2 border-black font-label-bold neo-brutalist-shadow-sm active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">
+                End Session
+            </button>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-screen py-6 px-4 gap-8 bg-surface-container fixed left-0 h-full w-64 border-r-4 border-black dark:border-surface-container-highest shadow-[4px_0px_0px_0px_rgba(0,0,0,1)] z-40">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 bg-secondary border-2 border-black rounded-lg flex items-center justify-center neo-brutalist-shadow-sm">
+<span class="material-symbols-outlined text-on-secondary">security</span>
+</div>
+<div>
+<h2 class="font-headline-md text-label-bold text-secondary tracking-tighter leading-none">ProctorEdge</h2>
+<p class="text-[10px] text-on-surface-variant italic">Integrity, without intrusion</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-bold text-label-bold">Analytics</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary text-on-secondary border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="priority_high" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+<span class="font-label-bold text-label-bold">Flagged Events</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="font-label-bold text-label-bold">Exam Setup</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2">
+<button class="bg-primary text-on-primary border-2 border-black py-3 px-4 font-label-bold neo-brutalist-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all mb-4">
+                    New Session
+                </button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-2 text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Support
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-2 text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                    Documentation
+                </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 w-full p-gutter">
+<!-- Triage Header -->
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Triage Review</h1>
+<p class="font-body-lg text-on-surface-variant">Exam: CS101 Advanced Algorithms - Session ID: #7742-XP</p>
+</div>
+<div class="flex gap-4">
+<span class="bg-secondary text-on-secondary px-4 py-2 rounded-full font-label-bold border-2 border-black flex items-center gap-2 neo-brutalist-shadow-sm">
+<span class="material-symbols-outlined text-sm">emergency</span> 3 High Priority Flags
+                    </span>
+<span class="bg-tertiary text-on-tertiary px-4 py-2 rounded-full font-label-bold border-2 border-black neo-brutalist-shadow-sm">
+                        Integrity Score: 42%
+                    </span>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Video Player Interface (Active) -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<div class="bg-surface-container-low border-4 border-black neo-brutalist-shadow-lg relative overflow-hidden aspect-video group">
+<img alt="Live Proctoring Stream" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A first-person perspective of a dark student workspace illuminated by multiple monitor glows. The image is captured in a high-contrast Neo-Brutalist cinematic style with deep purple shadows and electric yellow UI overlays. Digital scan lines and a 'LIVE' recording indicator in the corner add to the intense surveillance mood. The environment is cluttered with books and tech gear, rendered with heavy outlines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkefn0nHBq-54nxB6SXlWnpmEBtXHciH7qpTI91l3Li1q_30kxSTNdC4VuOtvPi0vPiKOzc3oHkhQdpkQWF4BNXWtkE9KCOPvok_IWcimCFioQgSaLPMwk0NmfTsg6bXJkZX3aIPXdSncz6N9gmBsy5fc98TgCkbE39jRgZralf-uqTykmLKApwQdFJGKwdgy0PWIpH9CKBrK_xiVSoOPsGVwcP-gV1WlKpnNTB3NwzVjs9inFOKBYN1UvGorVr4ITYcsegyGl8GGY"/>
+<!-- Overlay UI -->
+<div class="absolute inset-0 flex flex-col justify-between p-6 bg-gradient-to-t from-black/80 via-transparent to-transparent">
+<div class="flex justify-between items-start">
+<div class="bg-black/60 backdrop-blur-md border-2 border-secondary px-3 py-1 flex items-center gap-2">
+<div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+<span class="font-data-mono text-data-mono text-secondary">REC 00:42:12</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-black/60 p-2 border-2 border-white/20 text-white hover:border-secondary transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="bg-black/60 p-2 border-2 border-white/20 text-white hover:border-secondary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Video Controls -->
+<div class="space-y-4">
+<div class="w-full h-1 bg-white/20 relative cursor-pointer">
+<div class="absolute top-0 left-0 h-full w-2/3 bg-secondary"></div>
+<div class="absolute top-1/2 left-2/3 -translate-y-1/2 w-4 h-4 bg-secondary border-2 border-black rounded-full shadow-[2px_2px_0px_#000]"></div>
+<!-- Incident Markers -->
+<div class="absolute top-0 left-[15%] w-1 h-full bg-error animate-pulse"></div>
+<div class="absolute top-0 left-[42%] w-1 h-full bg-secondary"></div>
+<div class="absolute top-0 left-[60%] w-1 h-full bg-error"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-white text-4xl hover:text-secondary transition-colors">play_arrow</button>
+<button class="material-symbols-outlined text-white hover:text-secondary transition-colors">replay_10</button>
+<button class="material-symbols-outlined text-white hover:text-secondary transition-colors">forward_10</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-white">volume_up</span>
+<div class="w-20 h-1 bg-white/20 rounded-full">
+<div class="w-1/2 h-full bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-data-mono text-sm text-white">1x SPEED</span>
+<button class="bg-secondary text-on-secondary px-4 py-1 border-2 border-black font-label-bold neo-brutalist-shadow-sm">MARK INCIDENT</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insights Bento -->
+<div class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow transition-all hover:translate-y-[-2px]">
+<p class="font-label-bold text-secondary text-xs mb-2">GAZE TRACKING</p>
+<div class="h-16 flex items-end gap-1">
+<div class="w-full bg-secondary/20 h-1/2"></div>
+<div class="w-full bg-secondary/20 h-3/4"></div>
+<div class="w-full bg-secondary h-full"></div>
+<div class="w-full bg-secondary h-5/6"></div>
+<div class="w-full bg-secondary/20 h-2/3"></div>
+</div>
+<p class="font-data-mono text-xs mt-2 text-on-surface-variant">88% Off-Screen</p>
+</div>
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow transition-all hover:translate-y-[-2px]">
+<p class="font-label-bold text-secondary text-xs mb-2">AUDIO ANALYSIS</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="font-data-mono text-sm">Human Voice (92%)</span>
+</div>
+<p class="text-[10px] text-error-container mt-2">Possible collaborative breach</p>
+</div>
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow transition-all hover:translate-y-[-2px]">
+<p class="font-label-bold text-secondary text-xs mb-2">DEVICE STATUS</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">browser_updated</span>
+<span class="font-data-mono text-sm text-on-surface">Tab Switch (x4)</span>
+</div>
+<div class="mt-2 h-1 w-full bg-surface-variant">
+<div class="h-full w-4/5 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident Timeline & Sidebar (Finishing entrance) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter translate-y-4 opacity-90 transition-all duration-1000">
+<!-- Candidate Info -->
+<div class="bg-surface-container border-2 border-black p-6 neo-brutalist-shadow relative overflow-hidden">
+<div class="absolute -top-2 -right-2 w-12 h-12">
+<img alt="Peeking Character" class="w-full h-full object-contain transform rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEagS6SSoyxdyH0q7EDNWy2lO4LyqhUwZSeVFG3o0H3vS8hL4Jpy6LvsKWW-NP1dRgj-Se-SonzmJu9uDgdIEshPbfJCE7VIG2ZctnGdFsIwoWMMQibBfjnb-Zx7jD218OehD-SkVymPSCMhFCr1KVzQQ3c36soTs9a1gdeA7zn8PA7YiTiA8gzcnijbo7EiFaP5OpcchmbqWlj3avOfqaOghYFKtk-pIUvB-sLN4LkgD7JvsMq4o1gNN2EgqcXXeb8CAP1lPSOkfQ"/>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 border-4 border-secondary rounded-full overflow-hidden">
+<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A portrait of a college student in a casual environment, rendered with highly stylized rubber-hose aesthetics. The character has exaggerated features and expressive eyes. The background uses a bold deep indigo color with electric yellow framing. High-contrast lighting and thick comic-style linework define the aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5HRPfZRhJ8G1mnbiMzGgBR6BZW-dThZzFobTVtdlx10epiy7cjIx3xxvQq0qf36wMYh7T2OzohDlFNCiWFnz7IAVoJpuzwBcykXV5MQN7ileygBHxm-nM13ZGeDeK7s5KFdOVMd9xE9gupjgFKP9IFvxyxTkayo-MCcReEgb8IgkV5Rn3tU78wraCQZxPudQv-pGf9F3Y7FGAiqU9IwtIdkKSFPMdOxOTQYIBStcthb38CwZCpnk8AHSHV_ITLFc0eWzhufWZUj4d"/>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg">Marcus Holloway</h3>
+<p class="font-data-mono text-sm text-on-surface-variant">ID: 882910-B</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant text-sm">Attempt</span>
+<span class="font-label-bold">2nd Re-take</span>
+</div>
+<div class="flex justify-between border-b border-surface-variant pb-2">
+<span class="text-on-surface-variant text-sm">Browser</span>
+<span class="font-label-bold">Chrome 118 (Locked)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant text-sm">IP Address</span>
+<span class="font-data-mono">192.168.1.42</span>
+</div>
+</div>
+</div>
+<!-- Staggered Timeline Cards -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-bold text-secondary uppercase tracking-widest text-xs">Incident Timeline</h4>
+<!-- Timeline Item 1 -->
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow translate-y-8 opacity-40 transition-all duration-700 delay-100">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-error text-on-error px-2 py-1 text-[10px] font-black border border-black neo-brutalist-shadow-sm">HIGH RISK</span>
+<span class="font-data-mono text-xs">14:02:11</span>
+</div>
+<p class="font-body-md font-bold mb-1">External Object Detected</p>
+<p class="text-xs text-on-surface-variant">Smartphone detected in lower-left quadrant for 12 seconds.</p>
+</div>
+<!-- Timeline Item 2 -->
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow translate-y-12 opacity-30 transition-all duration-700 delay-300">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-secondary text-on-secondary px-2 py-1 text-[10px] font-black border border-black neo-brutalist-shadow-sm">CAUTION</span>
+<span class="font-data-mono text-xs">14:05:44</span>
+</div>
+<p class="font-body-md font-bold mb-1">Persistent Gaze Shift</p>
+<p class="text-xs text-on-surface-variant">Candidate looking away from primary screen multiple times.</p>
+</div>
+<!-- Timeline Item 3 -->
+<div class="bg-surface-container-high border-2 border-black p-4 neo-brutalist-shadow translate-y-16 opacity-10 transition-all duration-700 delay-500">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 text-[10px] font-black border border-black">LOG</span>
+<span class="font-data-mono text-xs">14:08:22</span>
+</div>
+<p class="font-body-md font-bold mb-1">Network Fluctuation</p>
+<p class="text-xs text-on-surface-variant">Connectivity dropped below 5Mbps for 30 seconds.</p>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-auto pt-6 flex gap-3">
+<button class="flex-1 bg-surface-container-highest border-2 border-black text-on-surface py-3 font-label-bold neo-brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                            CLEARED
+                        </button>
+<button class="flex-1 bg-error-container border-2 border-black text-white py-3 font-label-bold neo-brutalist-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                            FLAG SESSION
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

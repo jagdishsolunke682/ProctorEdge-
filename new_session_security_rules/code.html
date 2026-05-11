@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProctorEdge - Security Rules Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .neo-shadow {
+      box-shadow: 4px 4px 0px #000000;
+    }
+    .neo-shadow-lg {
+      box-shadow: 8px 8px 0px #000000;
+    }
+    .neo-border {
+      border-width: 3px;
+      border-color: #000000;
+    }
+    .active-neo-shadow {
+      box-shadow: 0px 0px 0px #000000;
+      transform: translate(4px, 4px);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#3b2f00",
+            "surface-container-highest": "#333348",
+            "on-surface": "#e2e0fc",
+            "outline-variant": "#464555",
+            "on-primary-fixed-variant": "#321ed2",
+            "surface-container-high": "#28283d",
+            "tertiary-container": "#9f6370",
+            "on-secondary-fixed-variant": "#564500",
+            "background": "#111125",
+            "error-container": "#93000a",
+            "tertiary": "#fbb3c1",
+            "surface-container-lowest": "#0c0c1f",
+            "tertiary-fixed-dim": "#fbb3c1",
+            "surface-container": "#1e1e32",
+            "secondary-container": "#dcb500",
+            "outline": "#918fa1",
+            "inverse-on-surface": "#2f2e43",
+            "secondary-fixed": "#ffe07d",
+            "secondary": "#fbd12d",
+            "primary-fixed": "#e2dfff",
+            "on-primary": "#1d00a5",
+            "on-surface-variant": "#c7c4d8",
+            "on-error-container": "#ffdad6",
+            "surface-dim": "#111125",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed-variant": "#6b3743",
+            "on-background": "#e2e0fc",
+            "surface-tint": "#c3c0ff",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-low": "#1a1a2e",
+            "surface-bright": "#37374d",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-primary-container": "#fefaff",
+            "primary": "#c3c0ff",
+            "on-primary-fixed": "#0f0069",
+            "inverse-surface": "#e2e0fc",
+            "on-tertiary-fixed": "#360c19",
+            "on-tertiary-container": "#fffaff",
+            "on-secondary-container": "#594700",
+            "on-tertiary": "#50212d",
+            "inverse-primary": "#4c42e9",
+            "secondary-fixed-dim": "#ebc31a",
+            "tertiary-fixed": "#ffd9df",
+            "surface": "#111125",
+            "primary-container": "#635bff",
+            "on-error": "#690005",
+            "surface-variant": "#333348"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "4px",
+            "section-padding": "80px",
+            "gutter": "24px",
+            "margin-page": "48px"
+          },
+          "fontFamily": {
+            "label-bold": ["Hanken Grotesk"],
+            "headline-md": ["Bricolage Grotesque"],
+            "display-lg": ["Bricolage Grotesque"],
+            "data-mono": ["Space Grotesk"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "body-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+            "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r-4 border-on-secondary-fixed bg-surface-container-low py-6 px-4 gap-4 flex flex-col z-50">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md font-black text-secondary uppercase tracking-tighter">ProctorEdge</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Institutional Portal</p>
+</div>
+<nav class="flex-1 space-y-3">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Overview
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Analytics
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span> Flagged Events
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary text-on-secondary border-4 border-on-secondary-fixed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="settings_applications" style="font-variation-settings: 'FILL' 1;">settings_applications</span> Exam Setup
+      </a>
+</nav>
+<div class="mt-auto border-t-2 border-outline-variant/30 pt-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-secondary font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span> Support
+      </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-secondary font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Sign Out
+      </a>
+<div class="px-4 py-2 mt-4 text-[10px] font-black uppercase text-tertiary tracking-widest italic">
+        Integrity, without intrusion
+      </div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-background border-b-4 border-on-secondary-fixed flex justify-between items-center px-gutter w-auto z-40">
+<div class="flex items-center bg-surface-container neo-border px-4 py-1 gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-64 placeholder:text-on-surface-variant/50" placeholder="Search sessions..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative hover:bg-surface-container-highest p-2 transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:bg-surface-container-highest p-2 transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="settings">settings</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l-2 border-outline-variant/30">
+<div class="text-right">
+<p class="font-label-bold text-label-bold text-on-surface">Admin_Sarah</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-bold">Standard Access</p>
+</div>
+<img alt="Administrator profile" class="w-10 h-10 rounded-full neo-border bg-tertiary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt9vZSzD7tTI-4hmiKffhetQhdRLLrGwjMjRR8pagqE5aDXgnLJsA-C8gekhbcf7np_1MTRPZJQ95nlUTRJM0gE1a4mnnnXxAts9Ye2FQDsSBmlDsgNVTn4QGblfybo-mZPKi4brWBooFfxiFmAXHcoG7TdFHtibX6HEDuSkrrHDspH4-FlEnfOaK5oLQ25EEBO91-VkDnXY21R19i3vBmNwzH2KGZg3eH2UoImcBiTYyEMcrYX1xnTF3kLq_9KxKIiRpTAgtWbPvh"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 px-12 pb-12 min-h-screen">
+<!-- Stepper Navigation -->
+<div class="max-w-4xl mx-auto mb-12">
+<div class="flex items-center justify-between relative">
+<!-- Connector Line -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-highest -z-10 -translate-y-1/2"></div>
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-tertiary neo-border flex items-center justify-center neo-shadow z-10">
+<span class="material-symbols-outlined text-on-tertiary font-bold" data-icon="check">check</span>
+</div>
+<span class="mt-3 font-label-bold text-label-bold text-on-surface-variant">General Info</span>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex flex-col items-center">
+<div class="w-14 h-14 bg-secondary neo-border flex items-center justify-center neo-shadow-lg z-10">
+<span class="font-headline-md text-on-secondary">2</span>
+</div>
+<span class="mt-3 font-label-bold text-label-bold text-secondary uppercase tracking-wider">Security Rules</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex flex-col items-center opacity-40">
+<div class="w-12 h-12 bg-surface-container-high neo-border flex items-center justify-center z-10">
+<span class="font-headline-md text-on-surface-variant">3</span>
+</div>
+<span class="mt-3 font-label-bold text-label-bold text-on-surface-variant">Monitoring</span>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="flex flex-col items-center opacity-40">
+<div class="w-12 h-12 bg-surface-container-high neo-border flex items-center justify-center z-10">
+<span class="font-headline-md text-on-surface-variant">4</span>
+</div>
+<span class="mt-3 font-label-bold text-label-bold text-on-surface-variant">Review</span>
+</div>
+</div>
+</div>
+<!-- Header Section -->
+<div class="max-w-4xl mx-auto mb-10 flex items-end justify-between">
+<div>
+<h2 class="font-display-lg text-headline-lg text-secondary mb-2">Rule Reinforcement</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Configure the strictness of the proctoring environment. High-security sessions require multi-point validation.</p>
+</div>
+<div class="hidden lg:block relative">
+<div class="absolute -top-12 -right-8 w-24 h-24 rotate-12 z-0 opacity-20">
+<!-- Decorative Element -->
+<span class="material-symbols-outlined text-[96px] text-secondary" data-icon="gpp_maybe">gpp_maybe</span>
+</div>
+</div>
+</div>
+<!-- Bento Form Layout -->
+<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Critical Rule: Browser Lock -->
+<div class="md:col-span-12 bg-surface-container-low neo-border neo-shadow-lg p-6 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-secondary text-on-secondary font-label-bold text-[10px] uppercase rounded-full neo-border">High Priority</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Browser Lock (SafeExam Mode)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Prevents students from opening new tabs, windows, or using other applications. Requires the ProctorEdge dedicated launcher to initiate the session.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-16 h-8 bg-surface-container-highest neo-border rounded-full peer peer-checked:after:translate-x-full peer-checked:after:bg-secondary after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-on-surface-variant after:rounded-full after:h-6 after:w-7 after:transition-all peer-checked:bg-secondary-container"></div>
+</label>
+<span class="font-label-bold text-label-bold text-secondary uppercase italic">Enforced</span>
+</div>
+<!-- Peeking Character Decoration -->
+<div class="absolute -bottom-4 -right-2 opacity-50 pointer-events-none">
+<img alt="Peeking proctor illustration" class="w-24 h-24 grayscale brightness-50" data-alt="A stylized, thick-lined rubber-hose character illustration of a curious observer with large eyes peeking from behind a geometric indigo block. The aesthetic is neo-brutalist with bold black strokes and limited yellow accents, set against a dark indigo dashboard background. The character has an expressive, slightly quirky personality that adds a human touch to the high-security proctoring interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv-3fXQReJbmLlp-NEQ3E75Z-GEVAZzXsJHHm3binc3RUn1E2dayKnIu9F11s1mW8Ucac0CSFJU7sVx_O9138eO3EeeYmOHze8cMoU4AKuAVTTyYOPHzuqR9tutlNNttbNc2BTfDQrVrCQ932lR--1cs9zeV1Lul6IRspdQ1t5u-oNVb7zylBEQ5CR678ZRl0pSE680fNuON6lbfoc2r1T7QPBed6GSgRdcPWTMd22NJCNJ05aMZttslTtPxQnvcWqwdCo77nwdQZd"/>
+</div>
+</div>
+<!-- Rules Grid -->
+<div class="md:col-span-6 bg-surface-container p-6 neo-border neo-shadow hover:translate-y-[-2px] transition-transform group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-tertiary-container neo-border flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="videocam" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<input class="w-6 h-6 border-2 border-secondary bg-transparent rounded focus:ring-secondary checked:bg-secondary" type="checkbox"/>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-2">Camera Requirement</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Continuous video stream mandatory. AI will flag eye movement and presence of other individuals.</p>
+</div>
+<div class="md:col-span-6 bg-surface-container p-6 neo-border neo-shadow hover:translate-y-[-2px] transition-transform group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-primary-container neo-border flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="mic" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<input checked="" class="w-6 h-6 border-2 border-secondary bg-transparent rounded focus:ring-secondary checked:bg-secondary" type="checkbox"/>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-2">Audio Monitoring</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Active microphone capture. System filters ambient noise while flagging speech or suspicious acoustic patterns.</p>
+</div>
+<div class="md:col-span-6 bg-surface-container p-6 neo-border neo-shadow hover:translate-y-[-2px] transition-transform group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-on-secondary-container neo-border flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="devices" style="font-variation-settings: 'FILL' 1;">devices</span>
+</div>
+<input class="w-6 h-6 border-2 border-secondary bg-transparent rounded focus:ring-secondary checked:bg-secondary" type="checkbox"/>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-2">Secondary Device Detection</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Advanced signal analysis to identify mobile devices or additional displays in the testing vicinity.</p>
+</div>
+<div class="md:col-span-6 bg-surface-container p-6 neo-border neo-shadow hover:translate-y-[-2px] transition-transform group">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-surface-container-highest neo-border flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="screen_record" style="font-variation-settings: 'FILL' 1;">screen_record</span>
+</div>
+<input checked="" class="w-6 h-6 border-2 border-secondary bg-transparent rounded focus:ring-secondary checked:bg-secondary" type="checkbox"/>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface mb-2">Screen Recording</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Full screen capture archived for review. Includes metadata of all OS-level system events.</p>
+</div>
+<!-- Additional Settings Info -->
+<div class="md:col-span-12 flex items-start gap-4 p-4 border-2 border-dashed border-outline-variant rounded-lg mt-4">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+<p class="text-xs font-data-mono text-on-surface-variant">Note: Enabling all security rules may increase system requirements for students. Ensure your target audience has access to compatible hardware before finalizing these constraints.</p>
+</div>
+</div>
+<!-- Actions Section -->
+<div class="max-w-4xl mx-auto mt-12 flex items-center justify-between">
+<button class="px-8 py-3 bg-transparent border-2 border-on-surface-variant text-on-surface-variant font-label-bold text-label-bold hover:bg-surface-container-high transition-all">
+        Back to General
+      </button>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-surface-container-low neo-border text-on-surface font-label-bold text-label-bold neo-shadow hover:translate-y-0.5 active:translate-y-1 active:shadow-none transition-all">
+          Save Draft
+        </button>
+<button class="px-10 py-3 bg-secondary neo-border text-on-secondary font-label-bold text-label-bold neo-shadow-lg hover:translate-x-1 hover:translate-y-1 hover:shadow-none active:scale-95 transition-all">
+          Next Step: Monitoring
+        </button>
+</div>
+</div>
+</main>
+<!-- Floating Illustration (Neo-Brutalist style) -->
+<div class="fixed bottom-8 right-8 pointer-events-none -z-0 opacity-10">
+<img alt="Security Shield" class="w-64 h-64" data-alt="A massive, bold geometric shield icon rendered in a neo-brutalist graphic design style. The shield features thick 5px black borders, vibrant yellow and indigo color blocks, and sharp architectural angles. It is set against a dark midnight indigo background with a subtle grid pattern, embodying a sense of high-performance security and digital integrity. The lighting is flat with hard, non-blurred shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCntN7GiMpmi5VElxbYwSCg6-Ki7gm5yFr2QmeGwhZtL9P3Ora9KBqejMx31tITH2ELvMS-Ec1ITWM3_B4mk2mDJ5KQ48pun7fNF3ikN2FpLk1ndFp9e14AgSQFiVhhj0zs-Eban-qpP6OVTEqcRj2kLL1O8RKAKs-kFJlCRVH8VMkEzcDoPacMGm4VQW-tQOunG6W5o3lbg2Z3fwG86wnvoHTLENs5uz0tQ2pXPHk72xjQ-92ug-z9OOtIPWVsDe12Cw1w4tqyHi9K"/>
+</div>
+</body></html>

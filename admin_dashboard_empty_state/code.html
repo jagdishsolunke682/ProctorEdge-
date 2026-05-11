@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;700&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #111125;
+            color: #e2e0fc;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffaff",
+                        "on-secondary-fixed-variant": "#564500",
+                        "surface-bright": "#37374d",
+                        "secondary": "#fbd12d",
+                        "on-tertiary": "#50212d",
+                        "on-primary-fixed": "#0f0069",
+                        "tertiary-fixed-dim": "#fbb3c1",
+                        "inverse-surface": "#e2e0fc",
+                        "tertiary": "#fbb3c1",
+                        "on-surface": "#e2e0fc",
+                        "secondary-fixed": "#ffe07d",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#231b00",
+                        "surface-container-high": "#28283d",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-fixed-variant": "#321ed2",
+                        "on-primary": "#1d00a5",
+                        "surface-container-low": "#1a1a2e",
+                        "on-primary-container": "#fefaff",
+                        "on-surface-variant": "#c7c4d8",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "outline-variant": "#464555",
+                        "on-secondary-container": "#594700",
+                        "surface-dim": "#111125",
+                        "on-error": "#690005",
+                        "surface-tint": "#c3c0ff",
+                        "outline": "#918fa1",
+                        "surface-container": "#1e1e32",
+                        "on-secondary": "#3b2f00",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface": "#111125",
+                        "secondary-container": "#dcb500",
+                        "surface-container-highest": "#333348",
+                        "tertiary-container": "#9f6370",
+                        "primary-container": "#635bff",
+                        "surface-variant": "#333348",
+                        "on-tertiary-fixed-variant": "#6b3743",
+                        "inverse-on-surface": "#2f2e43",
+                        "on-tertiary-fixed": "#360c19",
+                        "tertiary-fixed": "#ffd9df",
+                        "secondary-fixed-dim": "#ebc31a",
+                        "on-background": "#e2e0fc",
+                        "inverse-primary": "#4c42e9",
+                        "background": "#111125",
+                        "surface-container-lowest": "#0c0c1f",
+                        "primary": "#c3c0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-page": "48px",
+                        "section-padding": "80px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Space Grotesk"],
+                        "label-bold": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="flex min-h-screen bg-background">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen py-6 px-4 gap-8 bg-surface-container fixed left-0 w-64 border-r-4 border-black dark:border-surface-container-highest shadow-[4px_0px_0px_0px_rgba(0,0,0,1)] z-40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary rounded-lg border-2 border-black flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-black font-bold" data-icon="security">security</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-black text-secondary tracking-tighter leading-none">ProctorEdge</h1>
+<p class="font-label-bold text-[10px] text-on-surface-variant uppercase tracking-widest">Integrity, without intrusion</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 bg-secondary text-on-secondary border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] px-4 py-3 rounded-lg font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 font-label-bold text-label-bold hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 font-label-bold text-label-bold hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+                Flagged Events
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 font-label-bold text-label-bold hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+                Exam Setup
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Documentation
+            </a>
+<button class="mt-4 w-full bg-primary-container text-on-primary-container border-2 border-black py-3 px-4 font-label-bold text-label-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+                New Session
+            </button>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center h-20 px-gutter w-full sticky top-0 z-50 bg-surface border-b-4 border-black dark:border-surface-container-highest shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-extrabold text-secondary italic">Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-2 border-outline-variant text-on-surface font-body-md text-body-md px-4 py-2 pr-10 rounded-lg focus:border-secondary focus:ring-0 outline-none w-64" placeholder="Search sessions..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[2px] bg-outline-variant"></div>
+<button class="bg-error text-on-error px-4 py-1.5 font-label-bold text-label-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all">
+                        End Session
+                    </button>
+<img alt="Administrator Avatar" class="w-10 h-10 rounded-full border-2 border-secondary p-0.5 bg-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-fJMeikC1M8xxvEJ21PmF3bRFFoVMFP1B5hrT7HBjVNoI6u-IrKsqURFUsdNN72TurpqqvNp07WLWXwYfF_uv3lPn-BC_EAVS6TEz3ZJZe_JNAMYOHhRzNkiMxgC5MAYo3dwQKwr9s23W7yoKdfGnWvZacF8rCQBpMDvQaHVczj4Womf_bCDzwuTJ10l50MUBbNSrdLj-NFRdSISgBb_7NaSwOnBaIN5a5IHmxa45iABRxmR-lbiu3_Xb1ez3Pc9mYy1XXLTJpQqs"/>
+</div>
+</div>
+</header>
+<!-- Empty State Canvas -->
+<div class="flex-1 flex flex-col items-center justify-center p-gutter relative overflow-hidden">
+<!-- Grid Background Decor -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#635bff 1px, transparent 1px); background-size: 32px 32px;"></div>
+<!-- Empty State Container -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-2xl">
+<!-- Stylized Proctoring Eye / Mascot Illustration -->
+<div class="relative mb-10 group">
+<!-- Brutalist Background Circle -->
+<div class="absolute -inset-4 bg-primary rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="relative w-64 h-64 bg-surface-container-low border-4 border-black shadow-[12px_12px_0px_0px_#635bff] rounded-3xl flex items-center justify-center overflow-hidden">
+<!-- Peeking Mascot Element -->
+<div class="absolute -top-4 -right-4 w-16 h-16 bg-secondary border-4 border-black rounded-full flex items-center justify-center z-20 transform rotate-12">
+<span class="material-symbols-outlined text-black text-3xl font-bold" data-icon="visibility">visibility</span>
+</div>
+<img alt="ProctorEdge Silent Mascot" class="w-48 h-48 object-contain" data-alt="A stylized Neo-Brutalist character illustration of a floating, mechanical proctoring eye. The eye is circular with a large vibrant purple iris and thick black outlines, featuring rubber-hose style limbs. The background consists of deep indigo and electric yellow geometric patterns. The lighting is high-contrast and graphic, emphasizing the bold shadows and sharp edges of the character in a modern, high-performance SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIRBtgNHH9vgjSTWKkXyc0ApVsxm7QvUqQUx3M3V5u0Zwm4lronNrGJ160YUCDwOLFyjNKbnNLWv43WwLKa89FUTBtMTU5MFT1vBUl5h3fCtX7UhF9uwpkl_i9QSdz8MhW0PGfY5qw4KaiKCoMHUOuK5aPCkCocgXx6xyhp1g3JjX65gC69cdsR2ZbNrOdHCN8h6s803In4p4x_R6kEGfP3Br6uzl9VyBuqP3sQN_KVus1imBFzhbVK6GXgb7xUqWRo7glgQMjG6_5"/>
+<!-- Integrity Badge -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-tertiary text-on-tertiary px-3 py-1 border-2 border-black font-label-bold text-label-bold rounded-full rotate-[-2deg]">
+                            STATUS: IDLE
+                        </div>
+</div>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4 tracking-tight">No Active Sessions</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg leading-relaxed">
+                    Your live proctoring feed is currently quiet. <span class="text-secondary font-bold">Start a new session</span> or upload an exam template to begin monitoring.
+                </p>
+<!-- Call to Action Cards (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full">
+<!-- Action Card 1: Start New Session -->
+<button class="group flex flex-col items-start text-left p-8 bg-secondary border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-xl">
+<div class="w-12 h-12 bg-black text-secondary rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+</div>
+<span class="font-headline-md text-2xl text-black mb-2">Start New Session</span>
+<span class="font-body-md text-on-secondary-fixed-variant opacity-80">Launch a live proctoring environment immediately.</span>
+</button>
+<!-- Action Card 2: Upload Template -->
+<button class="group flex flex-col items-start text-left p-8 bg-surface-container border-4 border-outline text-on-surface shadow-[8px_8px_0px_0px_#635bff] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-xl">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container border-2 border-black rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="upload_file">upload_file</span>
+</div>
+<span class="font-headline-md text-2xl text-white mb-2">Upload Exam Template</span>
+<span class="font-body-md text-on-surface-variant opacity-80">Configure rules and restrictions for upcoming tests.</span>
+</button>
+</div>
+<!-- Footer Tagline -->
+<div class="mt-16 flex items-center gap-4 text-outline font-data-mono text-data-mono tracking-widest uppercase">
+<div class="h-px w-12 bg-outline-variant"></div>
+                    Integrity, without intrusion
+                    <div class="h-px w-12 bg-outline-variant"></div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button Contextual Suppression check: 
+             The page is an Empty State (Dashboard sub-level). 
+             Rules say suppress FAB on Transactional/Details. 
+             Since this is the "Home" context but empty, we could show it, 
+             but we have prominent cards instead. Keeping it clean. -->
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t-4 border-black flex justify-around items-center h-16 z-50">
+<button class="flex flex-col items-center justify-center text-secondary font-bold gap-1">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-label-bold">Overview</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-label-bold">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+<span class="text-[10px] font-label-bold">Events</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant gap-1">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="text-[10px] font-label-bold">Setup</span>
+</button>
+</nav>
+</body></html>

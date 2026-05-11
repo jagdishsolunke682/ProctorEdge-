@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;700&amp;family=Space+Grotesk:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-container-low": "#1a1a2e",
+                    "on-tertiary-fixed-variant": "#6b3743",
+                    "on-secondary-container": "#594700",
+                    "surface-container": "#1e1e32",
+                    "on-primary": "#1d00a5",
+                    "tertiary-fixed": "#ffd9df",
+                    "surface-variant": "#333348",
+                    "on-primary-fixed": "#0f0069",
+                    "on-secondary": "#3b2f00",
+                    "secondary-container": "#dcb500",
+                    "on-primary-fixed-variant": "#321ed2",
+                    "on-background": "#e2e0fc",
+                    "surface-container-highest": "#333348",
+                    "on-secondary-fixed-variant": "#564500",
+                    "secondary": "#fbd12d",
+                    "primary-fixed": "#e2dfff",
+                    "on-tertiary-container": "#fffaff",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#c3c0ff",
+                    "on-surface": "#e2e0fc",
+                    "tertiary": "#fbb3c1",
+                    "primary-container": "#635bff",
+                    "secondary-fixed": "#ffe07d",
+                    "surface": "#111125",
+                    "inverse-surface": "#e2e0fc",
+                    "outline-variant": "#464555",
+                    "on-error": "#690005",
+                    "surface-container-high": "#28283d",
+                    "secondary-fixed-dim": "#ebc31a",
+                    "error-container": "#93000a",
+                    "background": "#111125",
+                    "on-tertiary": "#50212d",
+                    "surface-bright": "#37374d",
+                    "on-secondary-fixed": "#231b00",
+                    "on-primary-container": "#fefaff",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-lowest": "#0c0c1f",
+                    "outline": "#918fa1",
+                    "inverse-primary": "#4c42e9",
+                    "surface-dim": "#111125",
+                    "on-tertiary-fixed": "#360c19",
+                    "on-surface-variant": "#c7c4d8",
+                    "inverse-on-surface": "#2f2e43",
+                    "tertiary-fixed-dim": "#fbb3c1",
+                    "tertiary-container": "#9f6370",
+                    "primary": "#c3c0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "section-padding": "80px",
+                    "margin-page": "48px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Hanken Grotesk"],
+                    "data-mono": ["Space Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutal-shadow {
+            box-shadow: 8px 8px 0px #000000;
+        }
+        .brutal-shadow-sm {
+            box-shadow: 4px 4px 0px #000000;
+        }
+        .brutal-shadow-active {
+            box-shadow: 0px 0px 0px #000000;
+            transform: translate(4px, 4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-20 px-gutter w-full sticky top-0 z-50 bg-surface dark:bg-surface border-b-4 border-black dark:border-surface-container-highest shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-extrabold text-secondary dark:text-secondary italic">ProctorEdge</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="hidden md:flex items-center gap-6">
+<span class="font-label-bold text-label-bold text-secondary font-bold">Overview</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all duration-100 px-2 py-1">Analytics</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant dark:text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all duration-100 px-2 py-1">Flagged Events</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:bg-secondary hover:text-on-secondary p-2 transition-all">notifications</button>
+<button class="material-symbols-outlined text-primary hover:bg-secondary hover:text-on-secondary p-2 transition-all">settings</button>
+<div class="h-10 w-10 border-2 border-black overflow-hidden bg-primary">
+<img alt="Administrator Avatar" class="h-full w-full object-cover" data-alt="A stylized professional profile avatar for a web application administrator. The character is rendered in a minimalist, thick-lined rubber-hose illustration style, set against a vibrant deep indigo background. The lighting is flat and high-contrast, fitting the neo-brutalist aesthetic of the brand. The color palette utilizes deep indigo, bright yellow, and sharp blacks to maintain visual consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvgK3ZNNG00_qojkoB4xI8AdFBVY55Gv81U9vsl0rhmQL8EAzkwWCoJ9Gxv4I_bDQa7JixqjVGSJsc44-SHfVwSaheJMwCGMlCsr7OCtzp1fRpzWQYDsDrPD9dkjwNfriapbjJwSz8xKJve467HCq_FZeXmlEO6aNz2SmiI1TC-evucHP38ZOcSrPpkYOOG2_QzvqC6iYnTHKpwfQIeYoTLcJKZuS1xwa2YEzd2Pf8VonUwht5NIg2_mofAcy45NttDJTg0hYJtly"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center p-gutter">
+<!-- Success Container -->
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Illustration / Icon Section -->
+<div class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
+<div class="relative mb-8 group">
+<!-- Brutalist Icon Container -->
+<div class="w-32 h-32 bg-secondary border-4 border-black brutal-shadow flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-7xl text-black" style="font-variation-settings: 'FILL' 1, 'wght' 700;">check_circle</span>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-tertiary border-4 border-black brutal-shadow-sm flex items-center justify-center transform rotate-12">
+<span class="material-symbols-outlined text-black">auto_awesome</span>
+</div>
+</div>
+<h1 class="font-display-lg text-headline-lg text-on-background mb-4">Exam Ready to Secure</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm mb-8">
+                    Analysis complete. Your content has been processed and is ready for the secure proctoring environment.
+                </p>
+</div>
+<!-- Content Summary & Actions -->
+<div class="md:col-span-7">
+<div class="bg-surface-container-low border-4 border-black brutal-shadow p-8 flex flex-col gap-6">
+<div class="flex items-center justify-between border-b-2 border-outline-variant pb-4">
+<h2 class="font-headline-md text-headline-md text-primary">Content Summary</h2>
+<span class="bg-secondary text-on-secondary px-4 py-1 font-label-bold text-label-bold rounded-full brutal-shadow-sm">VERIFIED</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Summary Card 1 -->
+<div class="bg-surface-container-high border-2 border-black p-4 flex items-center gap-4 brutal-shadow-sm">
+<div class="w-12 h-12 bg-primary-container flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-on-primary-container">quiz</span>
+</div>
+<div>
+<p class="font-data-mono text-data-mono text-on-surface-variant uppercase tracking-wider">Detected</p>
+<p class="font-label-bold text-label-bold text-on-surface">15 Multiple Choice</p>
+</div>
+</div>
+<!-- Summary Card 2 -->
+<div class="bg-surface-container-high border-2 border-black p-4 flex items-center gap-4 brutal-shadow-sm">
+<div class="w-12 h-12 bg-tertiary-container flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-on-tertiary-container">subject</span>
+</div>
+<div>
+<p class="font-data-mono text-data-mono text-on-surface-variant uppercase tracking-wider">Identified</p>
+<p class="font-label-bold text-label-bold text-on-surface">3 Essay Prompts</p>
+</div>
+</div>
+<!-- Summary Card 3 -->
+<div class="bg-surface-container-high border-2 border-black p-4 flex items-center gap-4 brutal-shadow-sm">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-on-secondary-container">timer</span>
+</div>
+<div>
+<p class="font-data-mono text-data-mono text-on-surface-variant uppercase tracking-wider">Estimate</p>
+<p class="font-label-bold text-label-bold text-on-surface">60 Min Duration</p>
+</div>
+</div>
+<!-- Summary Card 4 -->
+<div class="bg-surface-container-high border-2 border-black p-4 flex items-center gap-4 brutal-shadow-sm">
+<div class="w-12 h-12 bg-outline-variant flex items-center justify-center border-2 border-black">
+<span class="material-symbols-outlined text-on-surface">security</span>
+</div>
+<div>
+<p class="font-data-mono text-data-mono text-on-surface-variant uppercase tracking-wider">Integrity</p>
+<p class="font-label-bold text-label-bold text-on-surface">Level: Secure High</p>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 bg-secondary text-black font-label-bold text-label-bold h-14 border-4 border-black brutal-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2">
+<span>Start Exam</span>
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+<button class="flex-1 bg-transparent text-on-surface font-label-bold text-label-bold h-14 border-4 border-tertiary brutal-shadow-sm hover:bg-tertiary hover:text-black transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">visibility</span>
+<span>Review Extracted Content</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Success Illustration (Floating Background Character) -->
+<div class="fixed bottom-0 right-0 p-8 hidden lg:block opacity-20 pointer-events-none">
+<img alt="ProctorEdge Mascot" class="w-64 h-64 grayscale contrast-125" data-alt="A playful, high-contrast rubber-hose style mascot character peeking from the bottom corner of a digital screen. The character features bold, thick black outlines and is wearing a sleek headset. The art style is inspired by classic 1930s animation but updated with a modern neo-brutalist color palette of deep indigo and electric yellow. The mood is encouraging and friendly, reinforcing the theme of integrity without intrusion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0_i6QrFm5mEIw5EHjU_cT9K2F56541CAQosQB5e_leaEIQeVo9BCGHUhvWQ1_i4k6ygTyNt39B8-hM226CPguGr0Rv2ASD8AoWEbwi2to2MMPSANKZR_tjf4I7y3H6CwkL96i1q-gzrvFvJPB9p1ULNRaXWOtbQoWjdT5jUkJ_A-Rgl2pUPFe_Ng7UoMo239Vx2_0CBhYxUULu4l9R1xUWa3Bmi4xwtNKJWSoueesl6uGmYIJxutxxOsPv6yeNe-9Dk_OEsqL8Gf7"/>
+</div>
+<!-- Footer Tagline -->
+<footer class="h-16 px-gutter flex items-center justify-center border-t-4 border-black bg-surface-container">
+<p class="font-headline-md text-sm italic text-on-surface-variant opacity-60">Integrity, without intrusion</p>
+</footer>
+</body></html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProctorEdge | AI Sensitivity Calibration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        body {
+            background-color: #111125;
+            color: #e2e0fc;
+            overflow-x: hidden;
+        }
+        .neo-brutal-shadow {
+            box-shadow: 8px 8px 0px #000000;
+        }
+        .neo-brutal-shadow-sm {
+            box-shadow: 4px 4px 0px #000000;
+        }
+        .active-shadow-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000000;
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: #1e1e32;
+            border: 2px solid #e2e0fc;
+            height: 12px;
+            border-radius: 0;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #fbd12d;
+            border: 3px solid #000000;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #000000;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#3b2f00",
+                        "surface-container-highest": "#333348",
+                        "on-surface": "#e2e0fc",
+                        "outline-variant": "#464555",
+                        "on-primary-fixed-variant": "#321ed2",
+                        "surface-container-high": "#28283d",
+                        "tertiary-container": "#9f6370",
+                        "on-secondary-fixed-variant": "#564500",
+                        "background": "#111125",
+                        "error-container": "#93000a",
+                        "tertiary": "#fbb3c1",
+                        "surface-container-lowest": "#0c0c1f",
+                        "tertiary-fixed-dim": "#fbb3c1",
+                        "surface-container": "#1e1e32",
+                        "secondary-container": "#dcb500",
+                        "outline": "#918fa1",
+                        "inverse-on-surface": "#2f2e43",
+                        "secondary-fixed": "#ffe07d",
+                        "secondary": "#fbd12d",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary": "#1d00a5",
+                        "on-surface-variant": "#c7c4d8",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#111125",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#6b3743",
+                        "on-background": "#e2e0fc",
+                        "surface-tint": "#c3c0ff",
+                        "on-secondary-fixed": "#231b00",
+                        "surface-container-low": "#1a1a2e",
+                        "surface-bright": "#37374d",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-primary-container": "#fefaff",
+                        "primary": "#c3c0ff",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-surface": "#e2e0fc",
+                        "on-tertiary-fixed": "#360c19",
+                        "on-tertiary-container": "#fffaff",
+                        "on-secondary-container": "#594700",
+                        "on-tertiary": "#50212d",
+                        "inverse-primary": "#4c42e9",
+                        "secondary-fixed-dim": "#ebc31a",
+                        "tertiary-fixed": "#ffd9df",
+                        "surface": "#111125",
+                        "primary-container": "#635bff",
+                        "on-error": "#690005",
+                        "surface-variant": "#333348"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "section-padding": "80px",
+                        "gutter": "24px",
+                        "margin-page": "48px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Hanken Grotesk"],
+                        "headline-md": ["Bricolage Grotesque"],
+                        "display-lg": ["Bricolage Grotesque"],
+                        "data-mono": ["Space Grotesk"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface bg-background antialiased">
+<!-- Sidebar Navigation -->
+<nav class="fixed left-0 top-0 h-full w-64 border-r-4 border-on-secondary-fixed bg-surface-container-low flex flex-col py-6 px-4 gap-4 z-50 shadow-[8px_0px_0px_0px_rgba(0,0,0,1)]">
+<div class="mb-8">
+<h1 class="font-headline-md text-headline-md font-black text-secondary uppercase tracking-tighter">ProctorEdge</h1>
+<p class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Institutional Portal</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">security</span> Flagged Events
+            </a>
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold bg-secondary text-on-secondary border-4 border-on-secondary-fixed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" href="#">
+<span class="material-symbols-outlined">settings_applications</span> Exam Setup
+            </a>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<div class="p-4 border-2 border-on-surface-variant border-dashed mb-4">
+<p class="font-headline-md text-md text-secondary italic mb-1">Integrity, without intrusion</p>
+</div>
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">help</span> Support</a>
+<a class="flex items-center gap-3 p-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">logout</span> Sign Out</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen pb-24">
+<!-- Top Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-background border-b-4 border-on-secondary-fixed flex justify-between items-center px-gutter z-40">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">New Session</span>
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-bold text-xs uppercase border-2 border-black">Step 3 of 4</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 cursor-pointer">settings</span>
+<div class="w-10 h-10 border-2 border-secondary bg-surface-container-highest overflow-hidden">
+<img alt="Administrator profile" data-alt="A professional headshot of a senior academic administrator with a neutral background. The lighting is crisp and modern, fitting the high-performance SaaS aesthetic. Deep indigo and warm yellow accents are subtly reflected in the environment, maintaining the ProctorEdge brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpg1Kvmx2URr7gTiRV6I9387k5TkGwjGtqAfN57Oew2TVVdRHzaKSgL0Qy35_XksdYYoMzGq3iliGOTPyb0aGhkAaZWpcWkeqzuKHyMhtVaSEzAgj025kxuA1D9z1aDQPI6lY9w2Nb1JEqYGbM3miGTz-07QhSpa2guchOYvuQyUW8hNaGrvWMcGDqwQO5aqLkVIOUyd8A9JPFl3ahgQoMDkc3hy-zwfwYVof6rT4MysEOn6R_Sqc_CHOgrYs5IDOW2bkgC9iDI7sB"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="mt-16 p-margin-page max-w-6xl mx-auto">
+<!-- Stepper Component -->
+<div class="flex items-center justify-between mb-12 relative">
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-highest -z-10 -translate-y-1/2 border-b-2 border-black"></div>
+<!-- Step 1 Done -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-tertiary text-on-tertiary border-4 border-black flex items-center justify-center font-black neo-brutal-shadow-sm">
+<span class="material-symbols-outlined">check</span>
+</div>
+<span class="font-label-bold text-xs uppercase text-on-surface-variant">Core Details</span>
+</div>
+<!-- Step 2 Done -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-tertiary text-on-tertiary border-4 border-black flex items-center justify-center font-black neo-brutal-shadow-sm">
+<span class="material-symbols-outlined">check</span>
+</div>
+<span class="font-label-bold text-xs uppercase text-on-surface-variant">Candidates</span>
+</div>
+<!-- Step 3 Active -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-secondary text-on-secondary border-4 border-black flex items-center justify-center font-black neo-brutal-shadow -translate-y-2">
+                        3
+                    </div>
+<span class="font-label-bold text-xs uppercase text-secondary font-bold">AI Calibration</span>
+</div>
+<!-- Step 4 Pending -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-surface-container text-on-surface-variant border-4 border-black flex items-center justify-center font-black">
+                        4
+                    </div>
+<span class="font-label-bold text-xs uppercase text-on-surface-variant">Review</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Controls -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-8">
+<section class="bg-surface-container-low border-4 border-black p-8 neo-brutal-shadow relative overflow-hidden">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-secondary rotate-12 flex items-center justify-center border-4 border-black opacity-20">
+<span class="material-symbols-outlined text-5xl">psychology</span>
+</div>
+<h2 class="font-headline-lg text-headline-md mb-6">AI Sensitivity Settings</h2>
+<p class="text-on-surface-variant font-body-lg mb-10">Fine-tune how the ProctorEdge Engine evaluates student behavior. Higher sensitivity increases security but may lead to more false positives.</p>
+<div class="space-y-12">
+<!-- Slider 1 -->
+<div class="group">
+<div class="flex justify-between items-end mb-4">
+<div>
+<label class="font-label-bold text-label-bold block uppercase tracking-wider text-secondary">Gaze Tracking Sensitivity</label>
+<span class="text-sm text-on-surface-variant">Detects eyes moving away from the screen area.</span>
+</div>
+<span class="font-data-mono text-xl text-secondary">75%</span>
+</div>
+<input class="w-full cursor-pointer" max="100" min="0" type="range" value="75"/>
+<div class="flex justify-between mt-2 font-label-bold text-[10px] text-outline uppercase">
+<span>Lenient</span>
+<span>Strict</span>
+</div>
+</div>
+<!-- Slider 2 -->
+<div class="group">
+<div class="flex justify-between items-end mb-4">
+<div>
+<label class="font-label-bold text-label-bold block uppercase tracking-wider text-secondary">Noise Detection Threshold</label>
+<span class="text-sm text-on-surface-variant">Sensitivity to ambient voices or unrecognized sounds.</span>
+</div>
+<span class="font-data-mono text-xl text-secondary">40%</span>
+</div>
+<input class="w-full cursor-pointer" max="100" min="0" type="range" value="40"/>
+<div class="flex justify-between mt-2 font-label-bold text-[10px] text-outline uppercase">
+<span>Silent</span>
+<span>Reactive</span>
+</div>
+</div>
+<!-- Slider 3 -->
+<div class="group">
+<div class="flex justify-between items-end mb-4">
+<div>
+<label class="font-label-bold text-label-bold block uppercase tracking-wider text-secondary">Object Recognition Strictness</label>
+<span class="text-sm text-on-surface-variant">Flags unauthorized devices (phones, tablets, books).</span>
+</div>
+<span class="font-data-mono text-xl text-secondary">90%</span>
+</div>
+<input class="w-full cursor-pointer" max="100" min="0" type="range" value="90"/>
+<div class="flex justify-between mt-2 font-label-bold text-[10px] text-outline uppercase">
+<span>Standard</span>
+<span>Paranoid</span>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-between items-center mt-4">
+<button class="bg-transparent border-4 border-on-surface-variant text-on-surface px-8 py-4 font-label-bold text-lg hover:bg-tertiary hover:text-on-tertiary transition-colors neo-brutal-shadow-sm active-shadow-press flex items-center gap-2">
+<span class="material-symbols-outlined">arrow_back</span> Back
+                        </button>
+<button class="bg-secondary border-4 border-black text-on-secondary px-12 py-4 font-label-bold text-lg neo-brutal-shadow active-shadow-press flex items-center gap-2">
+                            Next Step: Final Review <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Impact Preview -->
+<div class="col-span-12 lg:col-span-5">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- Visual Impact Box -->
+<div class="bg-background border-4 border-black p-6 neo-brutal-shadow">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<h3 class="font-headline-md text-2xl uppercase italic">Impact Preview</h3>
+</div>
+<div class="bg-surface-container-low border-2 border-black p-6 mb-6">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-bold text-xs uppercase text-on-surface-variant">Estimated Flag Density</span>
+<span class="bg-yellow-500 text-black px-2 py-0.5 font-label-bold text-[10px] border border-black">MODERATE-HIGH</span>
+</div>
+<!-- Bar Chart Visualization -->
+<div class="flex items-end gap-1 h-32 mb-4">
+<div class="flex-1 bg-secondary border border-black h-[20%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[35%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[65%] transition-all"></div>
+<div class="flex-1 bg-error border border-black h-[90%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[75%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[50%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[40%] transition-all"></div>
+<div class="flex-1 bg-secondary border border-black h-[85%] transition-all"></div>
+</div>
+<p class="text-sm font-body-md text-on-surface-variant italic">"Current settings will generate approximately 12 flags per hour of testing. We recommend manual review for peaks above 80%."</p>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<div class="w-6 h-6 bg-tertiary flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-xs text-on-tertiary">check_circle</span>
+</div>
+<p class="text-xs font-body-md text-on-surface-variant">High Gaze sensitivity may flag users with dual-monitor setups.</p>
+</li>
+<li class="flex gap-3">
+<div class="w-6 h-6 bg-tertiary flex items-center justify-center border-2 border-black flex-shrink-0">
+<span class="material-symbols-outlined text-xs text-on-tertiary">check_circle</span>
+</div>
+<p class="text-xs font-body-md text-on-surface-variant">Noise threshold is currently set to ignore keyboard typing sounds.</p>
+</li>
+</ul>
+</div>
+<!-- Character Illustration -->
+<div class="relative mt-8 h-48 bg-surface-container border-4 border-black neo-brutal-shadow-sm flex items-center justify-center overflow-hidden">
+<div class="text-center p-4">
+<h4 class="font-headline-md text-lg text-secondary">ProctorTip #03</h4>
+<p class="text-sm text-on-surface-variant">"For high-stakes exams, aim for high Object Recognition and moderate Gaze tracking to reduce noise."</p>
+</div>
+<!-- Illustration Placeholder -->
+<img alt="Abstract cyber-security visualization" class="absolute -right-12 -bottom-12 w-48 h-48 opacity-20 grayscale sepia rotate-[-15deg]" data-alt="A detailed digital art representation of complex neural networks and artificial intelligence nodes. The aesthetic is neo-brutalist with high-contrast lines and a palette of deep indigo, bright yellow, and soft pink. The lighting is dramatic, highlighting the intricate connections between nodes as if they are electrical pulses, conveying precision and security in a modern SaaS environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzcdFOoQCHAdR2-G7J04c244xxszmNqu65w7VyKBLNGiwrXTMHa35oFlLQec_xSQad6jUmaP7F4MjyDZBteJZl-L0qjxrc-swf-AqUj4Q51lSCkteLuPKvSRD1Sfg-LXjrzBRGMNDFcQ12q8YTKhEZa_79gs-wrpWeYVk_3aHup7Z08QgSm5CrqcfT5YVRzlynAm5x-l2WSVDolg2P9j_NOzzBNk9CNVXs14Tm07H0qW6hineiNyf1THUAZZbhNmFmlYb17SshI8rj"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for quick help -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-tertiary border-4 border-black text-on-tertiary neo-brutal-shadow active-shadow-press z-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">question_mark</span>
+</button>
+</body></html>

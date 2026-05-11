@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institutional Analytics | ProctorEdge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:ital,opsz,wght@0,12..96,200..800;1,12..96,200..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#333348",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#ffe07d",
+                      "on-secondary-container": "#594700",
+                      "on-tertiary-fixed-variant": "#6b3743",
+                      "secondary": "#fbd12d",
+                      "surface-container-highest": "#333348",
+                      "secondary-fixed-dim": "#ebc31a",
+                      "surface-container-high": "#28283d",
+                      "outline-variant": "#464555",
+                      "on-primary-container": "#fefaff",
+                      "primary": "#c3c0ff",
+                      "on-tertiary-container": "#fffaff",
+                      "inverse-on-surface": "#2f2e43",
+                      "on-background": "#e2e0fc",
+                      "on-surface-variant": "#c7c4d8",
+                      "inverse-primary": "#4c42e9",
+                      "surface-bright": "#37374d",
+                      "on-tertiary-fixed": "#360c19",
+                      "on-surface": "#e2e0fc",
+                      "on-error": "#690005",
+                      "tertiary-container": "#9f6370",
+                      "surface-container": "#1e1e32",
+                      "surface-tint": "#c3c0ff",
+                      "tertiary-fixed-dim": "#fbb3c1",
+                      "surface-container-lowest": "#0c0c1f",
+                      "inverse-surface": "#e2e0fc",
+                      "background": "#111125",
+                      "surface-dim": "#111125",
+                      "surface-container-low": "#1a1a2e",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "on-primary": "#1d00a5",
+                      "on-tertiary": "#50212d",
+                      "on-secondary": "#3b2f00",
+                      "outline": "#918fa1",
+                      "primary-container": "#635bff",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#dcb500",
+                      "on-primary-fixed-variant": "#321ed2",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#564500",
+                      "tertiary": "#fbb3c1",
+                      "on-primary-fixed": "#0f0069",
+                      "surface": "#111125",
+                      "on-secondary-fixed": "#231b00",
+                      "primary-fixed": "#e2dfff",
+                      "tertiary-fixed": "#ffd9df"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-padding": "80px",
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "margin-page": "48px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Bricolage Grotesque"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Bricolage Grotesque"],
+                      "label-bold": ["Hanken Grotesk"],
+                      "display-lg": ["Bricolage Grotesque"],
+                      "data-mono": ["Space Grotesk"],
+                      "body-lg": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                      "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .brutalist-shadow { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .brutalist-shadow-sm { box-shadow: 2px 2px 0px 0px rgba(0,0,0,1); }
+        .brutalist-border { border-width: 3px; border-color: black; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent 25%, rgba(195, 192, 255, 0.1) 50%, transparent 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        .reveal-delay-1 { opacity: 0.1; transform: translateY(10px); }
+        .reveal-delay-2 { opacity: 0.4; transform: translateY(5px); }
+        .reveal-delay-3 { opacity: 0.7; transform: translateY(2px); }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen py-6 px-4 gap-8 bg-surface-container fixed left-0 h-full w-64 border-r-4 border-black dark:border-surface-container-highest shadow-[4px_0px_0px_0px_rgba(0,0,0,1)] z-50">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary brutalist-border rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="ProctorEdge Mascot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlXftowFPn1tq89mT300hTXQGzSTicT6ZS9cnUH_GtYBFZe7GL0HBaW1ObkHeGnOuG09wrQEtkXp9gp3HoaM9HIleTZygzYlbBJVo05ButuT0NEG0NhGl-O6lY-gb4WIQHYz3Ib-cg5pioJMPsXuO3xxsxh3Il2E0LMAjpiIKLYcPdfVkJTjfGHDqahVeMNsW1cFqnaWTO2oXq-P1qzLFR3V97sjHp0H2c3E5qUMa0tGhyVRuV1FENNyBy10pGuyrH2D5Sm-KWAZCy"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-black text-secondary tracking-tighter">ProctorEdge</h1>
+</div>
+<p class="font-label-bold text-[10px] text-on-surface-variant italic">Integrity, without intrusion</p>
+</div>
+<button class="bg-secondary text-on-secondary brutalist-border brutalist-shadow px-4 py-3 font-label-bold text-label-bold hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+            New Session
+        </button>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-secondary text-on-secondary border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] px-4 py-3 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-bold text-label-bold">Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+<span class="font-label-bold text-label-bold">Flagged Events</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+<span class="font-label-bold text-label-bold">Exam Setup</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-bold text-label-bold">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-on-surface px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-bold text-label-bold">Documentation</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 bg-background min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-20 px-gutter w-full sticky top-0 z-40 bg-surface border-b-4 border-black dark:border-surface-container-highest shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-extrabold text-secondary italic">Institutional Analytics</h2>
+<div class="hidden lg:flex items-center bg-surface-container-low brutalist-border px-3 py-1 rounded-full gap-2">
+<span class="material-symbols-outlined text-primary scale-75">sync</span>
+<span class="font-data-mono text-data-mono text-[10px] uppercase">Updating Real-time...</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low brutalist-border px-4 py-2 w-64 font-body-md focus:ring-0 focus:border-secondary outline-none" placeholder="Search data points..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all brutalist-border-none rounded-lg">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-secondary hover:text-on-secondary transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 bg-primary-container brutalist-border rounded-full overflow-hidden">
+<img alt="Administrator Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVUMq_wbcTgE4W1mClvYjTwRq411PGhFJJ6_MRgGzwkfHs-gjAN-Wd_7TgftGmCiupmf7uzRUaUoxRKcs4EQpyv7Ti2xZo-88YOedEci3FfbStVxQpakDn16qMJ60XVcTvuoBBvUH13j8avdnIebvoCCb_4oXY3wjAlB-ZHuRtbe6NrGo5xtJmxquqRt-BK_1f8StCEnCR-VGWY6q7rZcj2maSXtQ1QaLp9flpAfsdGTu8hlFju333jmhHJ9lsGziaqpO6QUZ4vei9"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Performance Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Large Status Card -->
+<div class="md:col-span-2 lg:col-span-2 bg-surface-container-low brutalist-border brutalist-shadow p-6 flex flex-col gap-4 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-bold text-label-bold text-secondary uppercase tracking-widest">Integrity Score Trend</h3>
+<p class="font-display-lg text-6xl text-primary font-black mt-2">94.2%</p>
+</div>
+<div class="bg-secondary text-on-secondary brutalist-border px-3 py-1 font-data-mono text-[12px] brutalist-shadow-sm">
+                            +2.4% THIS QUARTER
+                        </div>
+</div>
+<!-- Mock Chart with Animation Cue -->
+<div class="h-32 w-full mt-4 flex items-end gap-2">
+<div class="w-full bg-primary-container brutalist-border h-3/4 transition-all duration-700 hover:h-full relative overflow-hidden">
+<div class="absolute inset-0 animate-shimmer opacity-30"></div>
+</div>
+<div class="w-full bg-secondary brutalist-border h-1/2 transition-all duration-700 hover:h-3/4 relative overflow-hidden">
+<div class="absolute inset-0 animate-shimmer opacity-30"></div>
+</div>
+<div class="w-full bg-tertiary brutalist-border h-5/6 transition-all duration-700 hover:h-full relative overflow-hidden">
+<div class="absolute inset-0 animate-shimmer opacity-30"></div>
+</div>
+<div class="w-full bg-primary brutalist-border h-2/3 transition-all duration-700 hover:h-5/6 relative overflow-hidden">
+<div class="absolute inset-0 animate-shimmer opacity-30"></div>
+</div>
+<div class="w-full bg-primary-container brutalist-border h-4/5 transition-all duration-700 hover:h-full relative overflow-hidden">
+<div class="absolute inset-0 animate-shimmer opacity-30"></div>
+</div>
+</div>
+<!-- Peeking Character -->
+<img alt="Peeking proctor character illustration" class="absolute -bottom-4 -right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity pointer-events-none" data-alt="A stylized, rubber-hose style illustration of a detective character with a large magnifying glass peeking from the corner of a dark interface. The character features thick black outlines and vibrant yellow accents, consistent with a high-contrast Neo-Brutalist aesthetic. The lighting is flat and graphic, creating a playful yet watchful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4SWlkzh6-GZW-78I7m70EAQGaztdM08KtRjZHAcIMjPG-0C7--rxdJLCslm4PZm-2Fy1V4s8stjNsegmpnSgsNKy81OV28Osg2GxN2cwGvLqGsuj-3fKYFghedDoaW-tMq1OFbX0fZmyRYuI-nCKZCF646AOf2RlFus7AwYMSzogiYf2Eha163RsTJgftwmIF17ALL7eWQfeLO2C7ycVWA4-it8q10H5cHW_moK4VATR1pJ0CFLCg0cRtNvCqj9HbxaVUWF8K6cBB"/>
+</div>
+<!-- Active Sessions Card -->
+<div class="bg-surface-container-low brutalist-border brutalist-shadow p-6 flex flex-col justify-between">
+<h3 class="font-label-bold text-label-bold text-tertiary uppercase tracking-widest">Live Sessions</h3>
+<div>
+<p class="font-display-lg text-5xl text-on-surface font-black">1,842</p>
+<div class="flex items-center gap-2 text-primary mt-2">
+<span class="material-symbols-outlined text-[18px]">radio_button_checked</span>
+<span class="font-data-mono text-data-mono">SCALING DETECTED</span>
+</div>
+</div>
+</div>
+<!-- Flagged Events Card -->
+<div class="bg-surface-container-low brutalist-border brutalist-shadow p-6 flex flex-col justify-between border-error">
+<h3 class="font-label-bold text-label-bold text-error uppercase tracking-widest">High-Risk Flags</h3>
+<div>
+<p class="font-display-lg text-5xl text-error font-black">08</p>
+<p class="font-body-md text-on-surface-variant mt-1">Pending review</p>
+</div>
+<button class="w-full mt-4 bg-error text-on-error brutalist-border brutalist-shadow-sm font-label-bold text-label-bold py-2 hover:bg-error-container hover:text-on-error-container transition-colors">
+                        VIEW QUEUE
+                    </button>
+</div>
+</section>
+<!-- Institutional Breakdown Table (with reveal transition cues) -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md font-bold">Institutional Breakdown</h3>
+<div class="flex gap-2">
+<button class="bg-surface-container brutalist-border px-4 py-2 font-label-bold text-label-bold hover:bg-surface-variant transition-colors">Export CSV</button>
+<button class="bg-primary text-on-primary brutalist-border brutalist-shadow-sm px-4 py-2 font-label-bold text-label-bold hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">Filter View</button>
+</div>
+</div>
+<div class="overflow-hidden brutalist-border bg-surface-container-low">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-highest border-b-2 border-black">
+<th class="text-left p-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Department</th>
+<th class="text-left p-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Exam Volume</th>
+<th class="text-left p-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Pass Rate</th>
+<th class="text-left p-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Integrity Pass</th>
+<th class="text-right p-4 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Action</th>
+</tr>
+</thead>
+<tbody>
+<!-- Fully revealed row -->
+<tr class="border-b-2 border-black hover:bg-surface-container transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary brutalist-border-none rounded-lg flex items-center justify-center font-black text-on-primary">CS</div>
+<span class="font-headline-md text-body-lg font-bold">Computer Science</span>
+</div>
+</td>
+<td class="p-4 font-data-mono text-data-mono text-body-lg">12,401</td>
+<td class="p-4 font-data-mono text-data-mono">88.5%</td>
+<td class="p-4">
+<span class="bg-tertiary text-on-tertiary brutalist-border px-3 py-1 font-label-bold text-[12px] rounded-full">EXCEPTIONAL</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-secondary hover:underline font-label-bold">Details</button>
+</td>
+</tr>
+<!-- Staggered Entrance Reveal 3 (High Opacity) -->
+<tr class="border-b-2 border-black hover:bg-surface-container transition-colors reveal-delay-3">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-secondary brutalist-border-none rounded-lg flex items-center justify-center font-black text-on-secondary">LS</div>
+<span class="font-headline-md text-body-lg font-bold">Life Sciences</span>
+</div>
+</td>
+<td class="p-4 font-data-mono text-data-mono text-body-lg">8,220</td>
+<td class="p-4 font-data-mono text-data-mono">92.1%</td>
+<td class="p-4">
+<span class="bg-tertiary text-on-tertiary brutalist-border px-3 py-1 font-label-bold text-[12px] rounded-full">EXCEPTIONAL</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-secondary hover:underline font-label-bold">Details</button>
+</td>
+</tr>
+<!-- Staggered Entrance Reveal 2 (Medium Opacity) -->
+<tr class="border-b-2 border-black hover:bg-surface-container transition-colors reveal-delay-2">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest brutalist-border-none rounded-lg flex items-center justify-center font-black text-on-surface">BU</div>
+<span class="font-headline-md text-body-lg font-bold">Business Admin</span>
+</div>
+</td>
+<td class="p-4 font-data-mono text-data-mono text-body-lg">14,990</td>
+<td class="p-4 font-data-mono text-data-mono">76.4%</td>
+<td class="p-4">
+<span class="bg-surface-container-highest text-on-surface-variant border-2 border-black px-3 py-1 font-label-bold text-[12px] rounded-full italic">CALCULATING...</span>
+</td>
+<td class="p-4 text-right">
+<div class="w-full h-2 bg-surface-container-highest animate-shimmer rounded"></div>
+</td>
+</tr>
+<!-- Staggered Entrance Reveal 1 (Low Opacity / Motion Trail) -->
+<tr class="border-b-2 border-black hover:bg-surface-container transition-colors reveal-delay-1">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest brutalist-border-none rounded-lg flex items-center justify-center font-black">--</div>
+<div class="w-32 h-4 bg-surface-container-highest animate-shimmer rounded"></div>
+</div>
+</td>
+<td class="p-4"><div class="w-16 h-4 bg-surface-container-highest animate-shimmer rounded"></div></td>
+<td class="p-4"><div class="w-12 h-4 bg-surface-container-highest animate-shimmer rounded"></div></td>
+<td class="p-4"><div class="w-20 h-6 bg-surface-container-highest animate-shimmer rounded-full"></div></td>
+<td class="p-4 text-right"><div class="w-12 h-4 bg-surface-container-highest animate-shimmer ml-auto rounded"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Analysis Widgets -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Anomaly Map/Distribution -->
+<div class="bg-surface-container-low brutalist-border p-6 flex flex-col gap-6 brutalist-shadow">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-body-lg font-bold">Global Anomaly Distribution</h4>
+<span class="material-symbols-outlined text-secondary">map</span>
+</div>
+<div class="aspect-video bg-background brutalist-border relative overflow-hidden group">
+<img alt="Global Heatmap" class="w-full h-full object-cover opacity-50 grayscale" data-alt="A dark, high-contrast world map heatmap displayed on a deep indigo digital screen. The map features glowing yellow and neon pink clusters indicating data anomalies across major global tech hubs. The aesthetic is clean and brutalist, with sharp borders and no soft blurs. The lighting suggests a high-tech command center environment with deep blue ambient light." data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCowQDl433fEUQmyfePgG5opriuSb_-Q5aWuWTBNG-CjGy6VyWQO4ylsgE1OAa84woUU4XH7QHUGPqwjXuvWiYJDftRPoNExfJbIHsY_4SBIkjxkDweEjver4UTump784wA4qYVtddveMl08Eb_5cHJPF7-Ui6I8Az9ehcsX8j6rVgpcmWgZJ6x-1pRc3WiRjS1uBDx9oOghup-qxBtG1fsrVMak72qXdT97dyQwsVknOmYOcqTZlSzP4sZZMQUaMXmdwbxhuy9soEh"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-secondary text-on-secondary brutalist-border p-4 brutalist-shadow-sm flex flex-col items-center">
+<span class="font-display-lg text-3xl font-black">42</span>
+<span class="font-label-bold text-[10px] uppercase">Node Clusters Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Integrity Insights Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low brutalist-border p-4 brutalist-shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<div>
+<p class="font-data-mono text-2xl font-bold">2.4m</p>
+<p class="font-label-bold text-[10px] text-on-surface-variant">Eye-Tracking Data Pts</p>
+</div>
+</div>
+<div class="bg-surface-container-low brutalist-border p-4 brutalist-shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary">mic</span>
+<div>
+<p class="font-data-mono text-2xl font-bold">142k</p>
+<p class="font-label-bold text-[10px] text-on-surface-variant">Audio Anomaly Logs</p>
+</div>
+</div>
+<div class="bg-surface-container-low brutalist-border p-4 brutalist-shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary">devices</span>
+<div>
+<p class="font-data-mono text-2xl font-bold">12.1k</p>
+<p class="font-label-bold text-[10px] text-on-surface-variant">Secondary Devices Blocked</p>
+</div>
+</div>
+<div class="bg-surface-container-low brutalist-border p-4 brutalist-shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-error">warning</span>
+<div>
+<p class="font-data-mono text-2xl font-bold">0.8%</p>
+<p class="font-label-bold text-[10px] text-on-surface-variant">Confirmed Malpractice</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="p-gutter border-t-4 border-black mt-8 flex flex-col md:flex-row justify-between items-center bg-surface-container gap-4">
+<p class="font-headline-md text-body-md italic text-on-surface-variant">Integrity, without intrusion</p>
+<div class="flex gap-6 font-label-bold text-label-bold text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-secondary transition-colors" href="#">System Status</a>
+<a class="hover:text-secondary transition-colors" href="#">Compliance Hub</a>
+</div>
+<div class="flex items-center gap-2 font-data-mono text-[10px] text-on-surface-variant uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                v4.8.2 Stable Build
+            </div>
+</footer>
+</main>
+<!-- Contextual FAB (Hidden on detail pages, but shown here for analytics context) -->
+<button class="fixed bottom-8 right-8 bg-secondary text-on-secondary brutalist-border brutalist-shadow p-4 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</button>
+</body></html>

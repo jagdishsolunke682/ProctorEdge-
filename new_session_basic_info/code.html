@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;700&amp;family=Space+Grotesk:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#3b2f00",
+            "surface-container-highest": "#333348",
+            "on-surface": "#e2e0fc",
+            "outline-variant": "#464555",
+            "on-primary-fixed-variant": "#321ed2",
+            "surface-container-high": "#28283d",
+            "tertiary-container": "#9f6370",
+            "on-secondary-fixed-variant": "#564500",
+            "background": "#111125",
+            "error-container": "#93000a",
+            "tertiary": "#fbb3c1",
+            "surface-container-lowest": "#0c0c1f",
+            "tertiary-fixed-dim": "#fbb3c1",
+            "surface-container": "#1e1e32",
+            "secondary-container": "#dcb500",
+            "outline": "#918fa1",
+            "inverse-on-surface": "#2f2e43",
+            "secondary-fixed": "#ffe07d",
+            "secondary": "#fbd12d",
+            "primary-fixed": "#e2dfff",
+            "on-primary": "#1d00a5",
+            "on-surface-variant": "#c7c4d8",
+            "on-error-container": "#ffdad6",
+            "surface-dim": "#111125",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed-variant": "#6b3743",
+            "on-background": "#e2e0fc",
+            "surface-tint": "#c3c0ff",
+            "on-secondary-fixed": "#231b00",
+            "surface-container-low": "#1a1a2e",
+            "surface-bright": "#37374d",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-primary-container": "#fefaff",
+            "primary": "#c3c0ff",
+            "on-primary-fixed": "#0f0069",
+            "inverse-surface": "#e2e0fc",
+            "on-tertiary-fixed": "#360c19",
+            "on-tertiary-container": "#fffaff",
+            "on-secondary-container": "#594700",
+            "on-tertiary": "#50212d",
+            "inverse-primary": "#4c42e9",
+            "secondary-fixed-dim": "#ebc31a",
+            "tertiary-fixed": "#ffd9df",
+            "surface": "#111125",
+            "primary-container": "#635bff",
+            "on-error": "#690005",
+            "surface-variant": "#333348"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "4px",
+            "section-padding": "80px",
+            "gutter": "24px",
+            "margin-page": "48px"
+          },
+          "fontFamily": {
+            "label-bold": ["Hanken Grotesk"],
+            "headline-md": ["Bricolage Grotesque"],
+            "display-lg": ["Bricolage Grotesque"],
+            "data-mono": ["Space Grotesk"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "body-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "display-lg": ["84px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "data-mono": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+            "headline-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .neo-shadow { box-shadow: 4px 4px 0px #000; }
+    .neo-shadow-lg { box-shadow: 8px 8px 0px #000; }
+    .neo-shadow-active { box-shadow: 0px 0px 0px #000; transform: translate(4px, 4px); }
+    .side-nav-shadow { box-shadow: 8px 0px 0px 0px rgba(0,0,0,1); }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r-4 border-on-secondary-fixed bg-surface-container-low side-nav-shadow z-50 flex flex-col py-6 px-4 gap-4">
+<div class="mb-8">
+<div class="font-headline-md text-headline-md font-black text-secondary uppercase tracking-tighter">ProctorEdge</div>
+<div class="font-label-bold text-label-bold text-on-surface-variant opacity-70">Institutional Portal</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        Overview
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+        Analytics
+      </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-secondary hover:translate-x-1 transition-transform font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+        Flagged Events
+      </a>
+<!-- Active State mapping to Exam Setup -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary text-on-secondary border-4 border-on-secondary-fixed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="settings_applications">settings_applications</span>
+        Exam Setup
+      </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/30 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+        Support
+      </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+        Sign Out
+      </a>
+<div class="mt-4 px-4 font-headline-md text-[12px] text-tertiary opacity-80 italic">Integrity, without intrusion</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-background border-b-4 border-on-secondary-fixed z-40 flex justify-between items-center px-gutter w-full">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-surface-container-low border-2 border-outline-variant rounded-none pl-10 pr-4 py-1 text-on-surface focus:border-secondary focus:ring-0 w-64 transition-all" placeholder="Search sessions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-highest p-2 transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-highest p-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-label-bold text-label-bold text-on-surface">Admin Portal</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest">Superuser</div>
+</div>
+<img alt="Administrator profile" class="w-10 h-10 border-2 border-secondary bg-surface-container-high p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD1AvQGpntLhIBmWOKuc08BoLQvhA5j-GfcyMQa-w2ZnQsbhXIgC_T7HbIhhMNnOB1I6_y0PYwHLSXVN6cXAy__pEDTuqq1xktkHu665F-BT9_GUNKgQlHWU9_UEvLi0WMERlSYCAYFpVr1qjZ6U_Qg-wtW2hoDegZ5JgregdgE5-cXlUPZNsCU242n1xW82S3aonEtVJMttmHF0xMlHAe66PDBxQcQ28T-vrp41w3TtfriL1TMaPsBhEwaTAopc_q9neFTYS8robj"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pl-64 pt-16 min-h-screen">
+<div class="p-margin-page max-w-6xl mx-auto">
+<!-- Stepper Header -->
+<section class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-8">Setup New Session</h1>
+<div class="grid grid-cols-4 gap-4">
+<!-- Step 1: Active -->
+<div class="relative">
+<div class="h-4 w-full bg-secondary border-2 border-black neo-shadow mb-3"></div>
+<div class="font-label-bold text-label-bold text-secondary">1. Basic Info</div>
+<div class="text-[10px] text-on-surface-variant uppercase mt-1">Current Step</div>
+</div>
+<!-- Step 2 -->
+<div class="relative opacity-50">
+<div class="h-4 w-full bg-surface-container-highest border-2 border-black mb-3"></div>
+<div class="font-label-bold text-label-bold text-on-surface">2. Security Rules</div>
+</div>
+<!-- Step 3 -->
+<div class="relative opacity-50">
+<div class="h-4 w-full bg-surface-container-highest border-2 border-black mb-3"></div>
+<div class="font-label-bold text-label-bold text-on-surface">3. AI Sensitivity</div>
+</div>
+<!-- Step 4 -->
+<div class="relative opacity-50">
+<div class="h-4 w-full bg-surface-container-highest border-2 border-black mb-3"></div>
+<div class="font-label-bold text-label-bold text-on-surface">4. Review</div>
+</div>
+</div>
+</section>
+<!-- Main Layout Grid (Bento Style) -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Form Section -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-low border-[3px] border-black neo-shadow-lg p-8 relative overflow-hidden">
+<!-- Peeking Illustration -->
+<div class="absolute -top-4 -right-4 w-24 h-24 rotate-12 opacity-20 pointer-events-none">
+<img alt="Peeking character" data-alt="A thick-lined rubber-hose style illustration of a playful character with large eyes peeking over a wall. The character is stylized with a neo-brutalist aesthetic, featuring bold black outlines and a simple yellow and cream color palette. The lighting is flat and high-contrast, fitting a modern SaaS dashboard environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdEiU1Z10mtPaFFd39Ndk_XkhuZbY94q2usPFFz5fM2GOHQg_bIbEIZy0__bqOGqx5g5iV6c1Yp07csLY77XEGtbys_FUCOYGvK9RjTOX4f46HyKDLohMduM_sE5vSYY2HE0f1nB2E3GRr5myxyzW8l5g6crPmG_vuQIqELEWotAP8K17-EqMYAvT4uGqVH3Z-L1bjEd00L4PSJKXs4apeSgy3uEQkxb-rK-8ikpRjJi3KT7NLrnqQMkjCwUmmZpdRbppYf6Q1pV5a"/>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface block uppercase tracking-wide">Exam Title</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant p-4 text-on-surface focus:border-secondary focus:ring-0 neo-shadow transition-all font-body-md" placeholder="e.g. Advanced Quantum Mechanics Finals" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface block uppercase tracking-wide">Institution</label>
+<select class="w-full bg-surface-container border-2 border-outline-variant p-4 text-on-surface focus:border-secondary focus:ring-0 neo-shadow transition-all font-body-md">
+<option>Global Institute of Technology</option>
+<option>Northwest Academy of Sciences</option>
+<option>Eastern Polytech</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface block uppercase tracking-wide">Expected Duration</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container border-2 border-outline-variant p-4 text-on-surface focus:border-secondary focus:ring-0 neo-shadow transition-all font-body-md" placeholder="120" type="number"/>
+<div class="bg-surface-container-highest border-2 border-black flex items-center px-4 font-label-bold text-label-bold">MINS</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface block uppercase tracking-wide">Start Time (UTC)</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant p-4 text-on-surface focus:border-secondary focus:ring-0 neo-shadow transition-all font-body-md" type="datetime-local"/>
+</div>
+</div>
+<div class="pt-8 flex justify-between items-center border-t border-outline-variant/30">
+<button class="px-8 py-3 font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors" type="button">
+                Save Draft
+              </button>
+<button class="bg-secondary text-on-secondary px-10 py-4 font-label-bold text-label-bold border-[3px] border-black neo-shadow hover:neo-shadow-active transition-all active:scale-95 flex items-center gap-2" type="button">
+                Continue to Security
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Sidebar Info/Quick Settings -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Integrity Badge Card -->
+<div class="bg-surface-container border-[3px] border-black neo-shadow p-6 flex items-center gap-4">
+<div class="w-16 h-16 bg-secondary border-2 border-black flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-secondary" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<div>
+<div class="font-headline-md text-[20px] text-on-surface">Certified Secure</div>
+<div class="text-body-md text-on-surface-variant text-sm">Session templates meet ISO-27001 education standards.</div>
+</div>
+</div>
+<!-- Help/Context Card -->
+<div class="bg-primary-container border-[3px] border-black neo-shadow p-6 flex-1">
+<h3 class="font-headline-md text-on-primary-container mb-4">Quick Tip</h3>
+<p class="text-on-primary-container opacity-90 mb-6 font-body-md">
+              Set your 'Expected Duration' slightly longer than the actual test time to account for the AI biometric verification process at the start.
+            </p>
+<div class="bg-on-primary-container/10 p-4 border border-on-primary-container/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="info">info</span>
+<span class="font-label-bold text-label-bold text-on-primary-container">System Recommendation</span>
+</div>
+<div class="text-sm text-on-primary-container opacity-80">
+                A 120-minute exam usually requires a 15-minute verification buffer.
+              </div>
+</div>
+</div>
+<!-- Recent Sessions Mini-List -->
+<div class="bg-surface-container-low border-[3px] border-black neo-shadow p-6">
+<h3 class="font-label-bold text-label-bold text-secondary uppercase mb-4">Duplicate Recent</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center justify-between p-3 bg-surface-container hover:bg-surface-container-high border-2 border-outline-variant transition-all text-left">
+<div>
+<div class="font-label-bold text-on-surface">History 101 Midterm</div>
+<div class="text-[10px] text-on-surface-variant">Last used 2 days ago</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="content_copy">content_copy</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 bg-surface-container hover:bg-surface-container-high border-2 border-outline-variant transition-all text-left">
+<div>
+<div class="font-label-bold text-on-surface">CS50 - Final Project</div>
+<div class="text-[10px] text-on-surface-variant">Last used 1 week ago</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Narrative Footer Banner -->
+<footer class="mt-section-padding border-t-[3px] border-outline-variant/30 py-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="shield_lock">shield_lock</span>
+<span class="font-data-mono text-data-mono">ProctorEdge Encryption Active: AES-256</span>
+</div>
+<div class="text-right mt-4 md:mt-0 font-label-bold text-label-bold">
+          Step 1 of 4: Setting the Foundation
+        </div>
+</footer>
+</div>
+</main>
+<!-- Contextual FAB (Only on Home/Dashboard) - Hidden here as per mandate -->
+</body></html>
